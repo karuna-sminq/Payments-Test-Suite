@@ -10,8 +10,8 @@ exports.config = {
         defaultTimeoutInterval: 2500000
     },
     specs: [
-      '1_1_link_payments.js',
-      // '1_2_gateway_payments.js'
+      // '1_1_link_payments.js',
+      '1_2_gateway_payments.js'
     ],
 
     /*=============================================>>>>>

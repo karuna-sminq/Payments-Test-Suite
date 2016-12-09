@@ -31,7 +31,7 @@ describe("Biz App: Link payments - Instamojo / Razorpay", function() {
 
     });
 
-    xit("Book Appointment", function() {
+    it("Book Appointment", function() {
 
         //Add Token
         element(by.xpath('/html/body/div/div[2]/md-content/add-new-token/div/md-fab-speed-dial/md-fab-trigger/button')).click();
