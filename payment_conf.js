@@ -10,8 +10,9 @@ exports.config = {
         defaultTimeoutInterval: 2500000
     },
     specs: [
-      // '1_1_link_payments.js',
-      '1_2_gateway_payments.js'
+        // '1_1_link_payments.js',
+        '1_2_1_gateway_payments.js',
+        '1_2_2_razorpay.js',
     ],
 
     /*=============================================>>>>>
@@ -19,13 +20,15 @@ exports.config = {
     ===============================================>>>>>*/
 
     // '1_1_link_payments.js',
-    // '1_2_gateway_payments.js'
+    // '1_2_1_gateway_payments.js'
+    // '1_2_2_razorpay.js',
 
     /*= End of Spec files =*/
     /*=============================================<<<<<*/
 
     onPrepare: function() {
         browser.manage().window().maximize();
+        global.EC = protractor.ExpectedConditions;
         jasmine.getEnv().addReporter(
             new Jasmine2HtmlReporter({
                 savePath: './reports/',

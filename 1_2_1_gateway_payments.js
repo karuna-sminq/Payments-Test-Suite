@@ -49,4 +49,28 @@ describe("User App: Gateway Payments - Razorpay / Paytm", function() {
 
     });
 
+    it("Make Payment", function () {
+
+      //My Tokens
+      element(by.xpath('/html/body/div[1]/div[1]/div/div[2]/div[2]/ul/li[1]/a')).click();
+
+      browser.sleep(sleep_time);
+
+      //Make Payment button
+      element(by.xpath('/html/body/div[1]/div[2]/div/div/div/div/div/div[1]/div/div/div[2]/div[1]/div[2]/div[2]/a/button')).click();
+
+      browser.sleep(sleep_time);
+
+      //Accept T&C
+      element(by.xpath('/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/div[3]/label/input')).click();
+
+      browser.sleep(sleep_time);
+
+      //Pay Booking Charges
+      element(by.xpath('/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/div[5]/button')).click();
+
+      browser.sleep(sleep_time);
+
+    });
+
 });
