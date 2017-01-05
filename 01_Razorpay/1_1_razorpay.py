@@ -18,10 +18,11 @@ class Razorpay(unittest.TestCase):
         self.verificationErrors = []
         self.accept_next_alert = True
         self.sleep_time = 2
-        driver = self.driver
-        driver.maximize_window()
+        self.driver.maximize_window()
 
     def test_razorpay_case1(self):
+        driver = self.driver
+
         driver.get(self.base_url + "/#/login?type=login")
         time.sleep(self.sleep_time)
         driver.find_element_by_css_selector("#sign-in-form > div > input[name=\"phone\"]").send_keys("7000000001")
@@ -61,6 +62,8 @@ class Razorpay(unittest.TestCase):
         # print "finished checking for text"
 
     def test_razorpay_case2(self):
+        driver = self.driver
+
         driver.find_element_by_id("testing-payment-modes").click()
         time.sleep(self.sleep_time)
         driver.find_element_by_xpath("//*[@id='my-wrapper']/div[2]/div/div/div/div/div[2]/div/div[6]/button").click()
@@ -71,14 +74,14 @@ class Razorpay(unittest.TestCase):
         # Card
         driver.find_element_by_xpath("//*[@id='payment-options']/div[1]").click()
         time.sleep(sleep_time)
-        driver.find_element_by_id("card_number").send_keys(4111 1111 1111 1111)
+        driver.find_element_by_id("card_number").send_keys("4111 1111 1111 1111")
         time.sleep(sleep_time)
-        driver.find_element_by_id("card_expiry").send_keys(11 19)
+        driver.find_element_by_id("card_expiry").send_keys("11 19")
         time.sleep(sleep_time)
         driver.find_element_by_id("card_name").clear()
         driver.find_element_by_id("card_name").send_keys("QA Test")
         time.sleep(sleep_time)
-        driver.find_element_by_id("card_cvv").send_keys(111)
+        driver.find_element_by_id("card_cvv").send_keys("111")
         time.sleep(sleep_time)
         driver.find_element_by_xpath("//*[@id='footer']/span[2]").click()
         time.sleep(sleep_time)
@@ -86,7 +89,6 @@ class Razorpay(unittest.TestCase):
         time.sleep(sleep_time)
         driver.find_element_by_id("modal-close").click()
         time.sleep(sleep_time)
-
 
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
